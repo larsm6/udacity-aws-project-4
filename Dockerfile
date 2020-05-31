@@ -4,7 +4,9 @@ FROM python:3.7.3-stretch
 WORKDIR /app
 
 # Copy source code to working directory
-COPY . model_data /app/
+COPY . /app/
+COPY model_data/boston_housing_prediction.joblib /app/model_data
+COPY model_data/housing.csv /app/model_data
 #COPY . nlib /app/
 
 # Install packages from requirements.txt
@@ -17,16 +19,3 @@ EXPOSE 80
 
 # Run app.py at container launch
 CMD ["python", "app.py"]
-
-
-
-## Step 3:
-# Install packages from requirements.txt
-# hadolint ignore=DL3013
-
-## Step 4:
-# Expose port 80
-
-## Step 5:
-# Run app.py at container launch
-
