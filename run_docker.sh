@@ -17,4 +17,8 @@ docker images udacity-prj4-maertins
 
 # Step 3: 
 # Run flask app
-docker run --publish 8000:80 --name ucity-prj4 udacity-prj4-maertins:1.0
+docker run --publish 8000:80 \
+    --name ucity-prj4 \
+    --log-driver json-file --log-opt mode=non-blocking \
+    udacity-prj4-maertins:1.0
+#    -m ucity-prj4-volume,target=/app \
