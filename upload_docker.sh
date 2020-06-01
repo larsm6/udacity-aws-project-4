@@ -11,11 +11,11 @@ dockerpath=$DOCKER_USERNAME/udacity-prj4-maertins
 # Step 2:  
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
-#tagname=1.0
-#echo "Using tagname: $tagname"
+tag=latest
+echo "Using tagname: $tag"
 docker login -u "$DOCKER_USERNAME"
 
 # Step 3:
 # Push image to a docker repository
 #docker push $dockerpath:$tagname
-docker push $dockerpath
+docker push $dockerpath:$tag

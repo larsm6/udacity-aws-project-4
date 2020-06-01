@@ -40,3 +40,5 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
+
+After running `./run_kubernetes.sh` you should be able to access the Kubernetes logs of your microservice by using: `kubectl logs deployment/udacity-prj4-maertins`
