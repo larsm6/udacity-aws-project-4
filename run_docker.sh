@@ -9,16 +9,16 @@ docker rm ucity-prj4
 
 # Step 1:
 # Build image and add a descriptive tag
-docker build -t udacity-prj4-maertins:1.0 .
+docker build -t larsm6/udacity-prj4-maertins .
 
 # Step 2: 
 # List docker images
-docker images udacity-prj4-maertins
+docker images larsm6/udacity-prj4-maertins
 
 # Step 3: 
 # Run flask app
 docker run --publish 8000:80 \
     --name ucity-prj4 \
     --log-driver json-file --log-opt mode=non-blocking \
-    udacity-prj4-maertins:1.0
+    larsm6/udacity-prj4-maertins
 #    -m ucity-prj4-volume,target=/app \

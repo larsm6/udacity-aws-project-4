@@ -5,11 +5,17 @@
 
 # Step 1:
 # Create dockerpath
-# dockerpath=<your docker ID/path>
+DOCKER_USERNAME=larsm6
+dockerpath=$DOCKER_USERNAME/udacity-prj4-maertins
 
 # Step 2:  
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
+#tagname=1.0
+#echo "Using tagname: $tagname"
+docker login -u "$DOCKER_USERNAME"
 
 # Step 3:
 # Push image to a docker repository
+#docker push $dockerpath:$tagname
+docker push $dockerpath
