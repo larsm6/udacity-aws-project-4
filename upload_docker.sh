@@ -17,5 +17,4 @@ docker login -u "$DOCKER_USERNAME"
 
 # Step 3:
 # Push image to a docker repository
-#docker push $dockerpath:$tagname
 docker push $dockerpath:$tag
