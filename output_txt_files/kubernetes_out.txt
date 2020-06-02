@@ -1,3 +1,21 @@
+larsm6@DESKTOP-44S8S4J:/mnt/c/Code/learning/udacity/devops/5_microservices_at_scale/udacity-aws-project-4$ bash run_kubernetes.sh
+Using default tag: latest
+latest: Pulling from larsm6/udacity-prj4-maertins
+Digest: sha256:15a941cde195dd1dda9a4f2da91f0b09fb36fe57ba45001d5197de861e5a63a7
+Status: Image is up to date for larsm6/udacity-prj4-maertins:latest
+docker.io/larsm6/udacity-prj4-maertins:latest
+kubectl run --generator=deployment/apps.v1 is DEPRECATED and will be removed in a future version. Use kubectl run --generator=run-pod/v1 or kubectl create instead.
+Error from server (AlreadyExists): deployments.apps "udacity-prj4-maertins" already exists
+NAME                                     READY   STATUS    RESTARTS   AGE
+udacity-prj4-maertins-6b9f67ddfb-29gmm   1/1     Running   0          4h48m
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+Handling connection for 8000
+
+
+
+larsm6@DESKTOP-44S8S4J:/mnt/c/Code/learning/udacity/devops/5_microservices_at_scale/udacity-aws-project-4$ kubectl logs deployment/udacity-prj4-maertins
  * Serving Flask app "app" (lazy loading)
  * Environment: production
    WARNING: Do not use the development server in a production environment.
@@ -27,3 +45,23 @@
 0     0  6.575  296.0     15.3  396.9   4.98
 [2020-06-01 22:14:03,442] INFO in app: output prediction: [20.35373177134412]
 127.0.0.1 - - [01/Jun/2020 22:14:03] "POST /predict HTTP/1.1" 200 -
+[2020-06-02 03:02:03,783] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-06-02 03:02:03,866] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-06-02 03:02:03,874] INFO in app: Scaling Payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-06-02 03:02:03,921] INFO in app: output prediction: [20.35373177134412]
+127.0.0.1 - - [02/Jun/2020 03:02:03] "POST /predict HTTP/1.1" 200 -
+[2020-06-02 03:02:05,518] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-06-02 03:02:05,528] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-06-02 03:02:05,540] INFO in app: Scaling Payload: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-06-02 03:02:05,544] INFO in app: output prediction: [20.35373177134412]
+127.0.0.1 - - [02/Jun/2020 03:02:05] "POST /predict HTTP/1.1" 200 -
